@@ -10,8 +10,6 @@ const Links = require('./models/links')
 const path = require('path')
 const requestIp = require('request-ip')
 const bodyParser = require('body-parser')
-const request = require('request-promise')
-const crypto = require('crypto')
 const session = require('express-session')
 
 app.use(bodyParser.json())
