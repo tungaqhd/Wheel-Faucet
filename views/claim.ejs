@@ -1,0 +1,61 @@
+<% include header %>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="ads">
+                <img src="http://via.placeholder.com/160x600.png">
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h1 class="site-name">
+                <%= settings.faucet_name %>
+            </h1>
+            <div class="alert alert-warning text-center">
+                This Bitcoin Faucet requires a FaucetHub Account to claim
+            </div>
+            <div class="alert alert-info text-center">
+                <i class="fas fa-gift"></i> Spin to win every <%= settings.faucet_timer/60 %> minutes
+            </div>
+            <div id="result"></div>
+            <form action="" method="POST">
+                <div class="form-group">
+                    <div class="form-group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fab fa-bitcoin"></i></span>
+                            </div>
+                            <input type="text" name="address" id="address" class="form-control"
+                                placeholder="Enter Your Bitcoin Address">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="canvasContainer">
+                    <canvas id="canvas" width="400" height="400">
+                        Canvas not supported, please user another browser.
+                    </canvas>
+                </div>
+                <button type="button" onclick="calculatePrize();"
+                    class="btn btn-primary btn-lg btn-block">Spin</button>
+                    <!-- <button type="button" onclick="calculatePrize(); this.disabled=true;"
+                        class="btn btn-primary btn-lg btn-block">Spin</button> -->
+            </form>
+        </div>
+        <div class="col-md-3">
+            <div class="ads">
+                <img src="http://via.placeholder.com/160x600.png">
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    const rewards = []
+</script>
+
+<% settings.rewards.forEach(rw => { %>
+<script>
+    // rewards.push({ fillStyle: i.fillStyle, text: i.text })    
+    rewards.push({ fillStyle: '<%=rw.fillStyle%>', text: '<%=rw.text%>'})
+</script>
+<% }) %>
+<% include footer %>

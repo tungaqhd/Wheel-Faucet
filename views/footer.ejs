@@ -1,0 +1,24 @@
+<footer class="text-center">&copy 2019 <a href="https://fapcoin.cc">Fap Faucet</a> | Made With Simple NodeJs Faucet
+    Script</footer>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<% if(settings.wait) { %>
+<script src="/js/TimeCircles.js" crossorigin="anonymous"></script>
+<script type="text/javascript">
+    $("#CountDownTimer").TimeCircles({ time: { Days: { show: false }, Hours: { show: false } } });
+    $("#CountDownTimer").TimeCircles({ count_past_zero: false });
+    $("#CountDownTimer").TimeCircles({ fg_width: 0.05 });
+    $("#CountDownTimer").TimeCircles({ bg_width: 0.5 });
+    $("#CountDownTimer").TimeCircles();
+    var time_left = $("#CountDownTimer").TimeCircles().getTime();
+    setTimeout(function () {
+        window.location.href = '';
+    }, time_left * 1000)
+</script>
+<% } else { %>
+<script src="/js/faucet.js" crossorigin="anonymous"></script>
+<% } %>
+<script src="https://kit.fontawesome.com/85480c3f0d.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
