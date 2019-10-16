@@ -26,5 +26,12 @@ settingSchema.statics.getAllSettings = async () => {
     }
 }
 
+settingSchema.statics.validateAdmin = async (admin) => {
+    let [usr, pw] = await Promise.all([Settings.find({name : 'username'}), Settings.find({name : 'password'})])
+    username = usr[0].value
+    password = pw[0].value
+    return admin === username + '-' + password
+}
+
 const Settings = mongoose.model('Settings', settingSchema)
 module.exports = Settings

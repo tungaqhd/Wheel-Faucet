@@ -1,0 +1,105 @@
+<% include header %>
+<div class="container">
+    <h1 class="text-center"><i class="fas fa-cogs"></i> Overview Setting</h1>
+    <h2><%= settings.faucet_name %></h2>
+	<form action="" method="post">
+		<div class="form-group">
+			<label class="control-label">Faucet Name</label>
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-globe-asia"></i></span>
+					</div>
+					<input type="text" class="form-control" name="faucet_name" value="<%= settings.faucet_name %>">
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Faucet Description</label>
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="far fa-newspaper"></i></span>
+					</div>
+					<input type="text" class="form-control" name="faucet_description" value="<%= settings.faucet_description %>">
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Faucethub API</label>
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-key"></i></span>
+					</div>
+					<input type="text" class="form-control" name="faucet_api" value="<%= settings.faucet_api %>">
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="currency"><i class="far fa-gem"></i> Select Currency</label>
+			<select class="form-control" id="currency" name="currency">
+				<option id="BTC" value="BTC">Bitcoin</option>
+				<option id="ETH" value="ETH">Ethereum</option>
+				<option id="XMR" value="XMR">Monero</option>
+				<option id="LTC" value="LTC">Litecoin</option>
+				<option id="DOGE" value="DOGE">Dogecoin</option>
+				<option id="BCH" value="BCH">Bitcoin Cash</option>
+				<option id="ZEC" value="ZEC">ZCash</option>
+				<option id="DGB" value="DGB">DigiByte</option>
+				<option id="BTX" value="BTX">BitCore</option>
+				<option id="BLK" value="BLK">Blackcoin</option>
+				<option id="DASH" value="DASH">Dash</option>
+				<option id="PPC" value="PPC">Peercoin</option>
+				<option id="XPM" value="XPM">Primecoin</option>
+				<option id="POT" value="POT">Potcoin</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Referral Comission (%)</label>
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-users"></i></span>
+					</div>
+					<input type="number" class="form-control" name="faucet_referral" value="<%=settings.faucet_referral%>">
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="control-label">Faucet Timer (seconds)</label>
+			<div class="form-group">
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-users"></i></span>
+					</div>
+					<input type="number" class="form-control" name="faucet_timer" value="<%=settings.faucet_timer%>">
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="form-group">
+				<label class="control-label">Admin Username</label>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="far fa-user"></i></span>
+					</div>
+					<input type="text" name="username" class="form-control" value="<%=settings.username%>">
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="form-group">
+				<label class="control-label">Admin Password</label>
+				<div class="input-group mb-3">
+					<div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-lock"></i></span>
+					</div>
+					<input type="password" name="password" class="form-control" value="<%=settings.password%>">
+				</div>
+			</div>
+		</div>
+		<button class="btn btn-success btn-lg btn-block" name="overview"><i class="fas fa-check"></i> Update</button>
+	</form>
+</div>
+<% include footer %>
