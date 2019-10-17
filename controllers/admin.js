@@ -58,3 +58,13 @@ exports.security = async (req, res) => {
         res.status(500)
     }
 }
+
+exports.ads = async (req, res) => {
+    try {
+        const { ip_address, settings } = req
+        res.render('admin/advertisement', {settings})
+    } catch(e) {
+        console.log(e)
+        res.status(500)
+    }
+}

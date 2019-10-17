@@ -1,0 +1,20 @@
+<% include header %>
+<div class="container">
+	<h1 class="text-center"><i class="far fa-image"></i> Advertisement Setting</h1>
+	<form action="" method="post">
+		<div class="form-group">
+			<label for="top_ad">Top Ad Slot</label>
+			<textarea class="form-control" id="top_ad" rows="3" name="faucet_top_ad"><%=settings.faucet_top_ad%></textarea>
+		</div>
+		<div class="form-group">
+			<label for="left_ad">Left Ad Slot</label>
+			<textarea class="form-control" id="left_ad" rows="3" name="faucet_left_ad"><%=settings.faucet_left_ad%></textarea>
+		</div>
+		<div class="form-group">
+			<label for="right_ad">Right Ad Slot</label>
+			<textarea class="form-control" id="right_ad" rows="3" name="faucet_right_ad"><%=settings.faucet_right_ad%></textarea>
+		</div>
+		<button class="btn btn-success btn-lg btn-block"><i class="fas fa-check"></i> Update</button>
+	</form>
+</div>
+<% include footer %>
