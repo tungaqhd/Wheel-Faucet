@@ -2,7 +2,7 @@
 <div class="container">
     <h1 class="text-center"><i class="fas fa-cogs"></i> Overview Setting</h1>
     <h2><%= settings.faucet_name %></h2>
-	<form action="" method="post">
+	<form action="/admin/update" method="post">
 		<div class="form-group">
 			<label class="control-label">Faucet Name</label>
 			<div class="form-group">
@@ -38,7 +38,7 @@
 		</div>
 		<div class="form-group">
 			<label for="currency"><i class="far fa-gem"></i> Select Currency</label>
-			<select class="form-control" id="currency" name="currency">
+			<select class="form-control" id="currency" name="faucet_currency">
 				<option id="BTC" value="BTC">Bitcoin</option>
 				<option id="ETH" value="ETH">Ethereum</option>
 				<option id="XMR" value="XMR">Monero</option>

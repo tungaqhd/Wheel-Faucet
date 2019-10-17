@@ -1,3 +1,6 @@
+const Settings = require('../models/settings')
+const Rewards = require('../models/rewards')
+
 exports.index = async (req, res) => {
     try {
         const { ip_address, settings } = req
@@ -67,4 +70,14 @@ exports.ads = async (req, res) => {
         console.log(e)
         res.status(500)
     }
+}
+
+exports.update = async (req, res) => {
+    const db = ['faucet_name', 'faucet_description', 'faucet_api', 'faucet_currency', 'faucet_timer', 'faucet_referral', 'faucet_iphub', 'faucet_ckey', 'faucet_vkey', 'faucet_hkey', 'faucet_top_ad', 'faucet_right_ad', 'faucet_right_ad', 'username', 'password']
+    db.forEach(async (name) => {
+        if(req.body[name]) {
+            await Settings.updateOne({name}, {value : req.body[name]})
+        }
+    })
+    res.redirect('/admin/overview')
 }

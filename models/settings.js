@@ -32,6 +32,9 @@ settingSchema.statics.validateAdmin = async (admin) => {
     password = pw[0].value
     return admin === username + '-' + password
 }
-
+// settingSchema.post('find', function(next) {
+//     this.value = decodeURIComponent(this.value)
+//     next()
+// })
 const Settings = mongoose.model('Settings', settingSchema)
 module.exports = Settings
