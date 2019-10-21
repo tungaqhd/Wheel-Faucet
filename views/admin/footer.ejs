@@ -1,20 +1,21 @@
 <footer class="text-center">&copy 2019 <a href="https://fapcoin.cc">Fap Faucet</a> | Made With Simple NodeJs Faucet
-    Script</footer>
+	Script</footer>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://kit.fontawesome.com/85480c3f0d.js" crossorigin="anonymous"></script>
 <script type="text/javascript">
 	$('#<%=settings.faucet_currency%>').attr('selected', 'true');
 
-	// edit link function
-	$('.edit').click(function(){
+
+	$('.edit').click(function () {
 		var id = $(this).children('.id').text();
-		var name = $(this).children('.name').text();
-		var url = $(this).children('.url').text();
-		var reward = $(this).children('.reward').text();
-		$('#id').val(id);
-		$('#name').val(name);
-		$('#url').val(url);
-		$('#reward').val(reward);
+		var color = $(this).children('.color').text();
+		var text = $(this).children('.text').text();
+		var value = $(this).children('.value').text();
+		console.assert(id, color, text, value)
+		$('#_id').val(id);
+		$('#color').val(color);
+		$('#text').val(text);
+		$('#value').val(value);
 	});
 	$("a[href='<?=current_url()?>']").parent().addClass('active');
 </script>

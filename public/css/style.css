@@ -13,6 +13,10 @@ input[type="text"] {
     font-size: 18px;
     font-weight: 600;
 }
+input[type="number"] {
+    font-size: 18px;
+    font-weight: 600;
+}
 .address {  
     text-align: center; 
 } 
@@ -27,4 +31,15 @@ input[type="text"] {
     background-position: center;
     width: 400px;
     height: 400px;
+}
+
+.reward-table {
+    padding-left: 10px;
+    padding-right: 10px;
+    max-height: 400px;
+    overflow-y:auto;
+    border: 1px gray solid;
+}
+.edit .td {
+    width: 20%;
 }
